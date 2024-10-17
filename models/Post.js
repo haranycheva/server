@@ -9,22 +9,23 @@ const postSchema = new Schema(
     description: {
       type: String,
     },
-    // email: {
-    //   type: String,
-    //   match: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
-    // },
     level: {
       type: String,
       enum: ["easy", "medium", "hard"],
     },
-    // actual: {
-    //   type: Boolean,
-    //   default: true,
-    // },
+    owner: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: "user",
+    },
+    postAvatar: {
+      type: String,
+      default: ""
+    }
   },
   { versionKey: false, timestamps: true }
 );
-postSchema.post("save", handleSaveError)
-postSchema.pre("findOneAndUpdate", preUpdate)
-postSchema.post("findOneAndUpdate", handleSaveError)
+postSchema.post("save", handleSaveError);
+postSchema.pre("findOneAndUpdate", preUpdate);
+postSchema.post("findOneAndUpdate", handleSaveError);
 export const Post = model("post", postSchema);

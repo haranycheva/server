@@ -6,10 +6,10 @@ const {DB_HOST} = process.env
 
 mongoose.connect(DB_HOST).then(() => {
   console.log("DB connect")
-  app.listen(3001);
+  app.listen(3002);
 }).catch((err) => {
-  // console.log(err.message);
-  process.exist(1)
+  console.log(err.message); 
+  process.exit(1)
 })
 
 
