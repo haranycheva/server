@@ -1,5 +1,7 @@
 export {default as rewriteJSON} from "./rewriteJSON.js"
 export {default as getAllPosts} from "./getAllPosts.js"
 export {default as HttpError} from "./HttpError.js"
-
+export {default as createToken} from "./createToken.js"
+export {default as createVerificationToken} from "./createVerificationToken.js"
+export {default as sendMessage} from "./sendMessage.js"
 export {default as cloudinary} from "./cloudinary.js"
